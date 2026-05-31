@@ -16,12 +16,18 @@ KB_PATH = os.path.expanduser("~/Desktop/Magistrale/_KB")
 DB_PATH = os.path.join(KB_PATH, ".chromadb")
 MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"  # ~120MB, capisce italiano
 
-EXCLUDE = {"search.py", "_glossario.md"}
+EXCLUDE_FILES = {"search.py", "_glossario.md"}
+EXCLUDE_DIRS  = {".venv", ".git", ".obsidian", "__pycache__"}
 
 
 def get_collection():
     client = chromadb.PersistentClient(path=DB_PATH)
-    return client.get_or_create_collection("kb")
+    return client.get_or_create_collection("kb-notes")
+
+
+def _is_valid(path: str) -> bool:
+    parts = set(path.replace(KB_PATH, "").split(os.sep))
+    return not (parts & EXCLUDE_DIRS) and os.path.basename(path) not in EXCLUDE_FILES
 
 
 def index():
@@ -29,7 +35,7 @@ def index():
     model = SentenceTransformer(MODEL_NAME)
     files = [
         f for f in glob.glob(f"{KB_PATH}/**/*.md", recursive=True)
-        if os.path.basename(f) not in EXCLUDE
+        if _is_valid(f)
     ]
     if not files:
         print("Nessun file .md trovato nella KB.")
