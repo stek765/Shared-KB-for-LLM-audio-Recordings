@@ -1,2 +1,5 @@
 .chromadb/
 __pycache__/
+.venv/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json

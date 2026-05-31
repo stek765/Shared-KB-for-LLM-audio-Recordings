@@ -1,0 +1,10 @@
+{
+  "interfaceFontSize": 15,
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "_assets",
+  "showUnsupportedFiles": false,
+  "defaultViewMode": "source",
+  "livePreview": true
+}

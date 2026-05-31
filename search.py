@@ -1,5 +1,7 @@
 # search.py — Ricerca semantica locale sulla KB (zero token cloud)
-# Requisiti: pip install chromadb sentence-transformers
+# Requisiti: usa il venv dedicato
+#   Esegui con: .venv/bin/python search.py ...
+#   Oppure: source .venv/bin/activate && python search.py ...
 #
 # Uso:
 #   python search.py index               → indicizza/aggiorna tutte le note
