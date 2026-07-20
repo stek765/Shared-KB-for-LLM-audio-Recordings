@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1257de"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="700" y1="0" x2="700" y2="600"/>
+  </g>
+
+  <circle cx="400" cy="300" r="280" fill="url(#glow)"/>
+
+  <!-- audio waveform, left side -->
+  <g transform="translate(40,300)" stroke="url(#wave)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9" filter="url(#soft)">
+    <path d="M0,0 L12,-10 L24,10 L36,-30 L48,28 L60,-55 L72,50 L84,-78 L96,70 L108,-40 L120,35 L132,-18 L144,15 L156,-8 L168,6 L180,-4"/>
+  </g>
+  <g transform="translate(190,300)" stroke="url(#wave)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.55" filter="url(#soft)">
+    <path d="M0,0 L10,-16 L20,14 L30,-34 L40,30 L50,-20 L60,18 L70,-10 L80,8"/>
+  </g>
+
+  <!-- flowing connector -->
+  <path d="M270,300 C 340,300 340,300 400,300" stroke="url(#flow)" stroke-width="2" fill="none" opacity="0.7" stroke-dasharray="1 10" stroke-linecap="round"/>
+
+  <!-- knowledge graph, right side -->
+  <g filter="url(#soft)">
+    <g stroke="url(#flow)" stroke-width="1.4" opacity="0.55">
+      <line x1="430" y1="300" x2="520" y2="230"/>
+      <line x1="430" y1="300" x2="540" y2="300"/>
+      <line x1="430" y1="300" x2="510" y2="380"/>
+      <line x1="520" y1="230" x2="620" y2="210"/>
+      <line x1="520" y1="230" x2="600" y2="290"/>
+      <line x1="540" y1="300" x2="640" y2="330"/>
+      <line x1="540" y1="300" x2="600" y2="290"/>
+      <line x1="510" y1="380" x2="600" y2="410"/>
+      <line x1="510" y1="380" x2="600" y2="290"/>
+    </g>
+    <g fill="#c4b5fd">
+      <circle cx="430" cy="300" r="7" fill="#a855f7"/>
+      <circle cx="520" cy="230" r="4.5"/>
+      <circle cx="540" cy="300" r="4.5"/>
+      <circle cx="510" cy="380" r="4.5"/>
+      <circle cx="620" cy="210" r="3.5" fill="#67e8f9"/>
+      <circle cx="600" cy="290" r="3.5" fill="#67e8f9"/>
+      <circle cx="640" cy="330" r="3.5" fill="#67e8f9"/>
+      <circle cx="600" cy="410" r="3.5" fill="#67e8f9"/>
+    </g>
+  </g>
+
+  <!-- note lines suggesting structured markdown notes -->
+  <g stroke="#93c5fd" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round">
+    <line x1="660" y1="205" x2="700" y2="205"/>
+    <line x1="655" y1="285" x2="695" y2="285"/>
+    <line x1="645" y1="325" x2="685" y2="325"/>
+    <line x1="655" y1="405" x2="695" y2="405"/>
+  </g>
+
+  <text x="40" y="70" font-family="monospace" font-size="13" fill="#93c5fd" opacity="0.55">audio → transcript → notes</text>
+</svg>

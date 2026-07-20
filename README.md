@@ -6,6 +6,8 @@
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-vector--db-green)
 ![Syncthing](https://img.shields.io/badge/Syncthing-sync-0891b2)
 
+![Audio to knowledge graph pipeline](audio-kb-network.svg)
+
 Knowledge base universitaria personale, generata automaticamente da registrazioni audio e interrogabile in linguaggio naturale tramite LLM. Le note non vengono scritte a mano: vengono prodotte da una pipeline agentica che parte dall'audio della lezione e restituisce Markdown strutturato per Obsidian.
 
 ---
